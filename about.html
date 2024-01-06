@@ -9,8 +9,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+        
     <style>
-        /* Whole page */
         * {
             margin: 0;
             padding: 0;
@@ -18,31 +18,31 @@
             font-family: "Poppins", sans-serif;
         }
 
-        /* Only body */
         body {
             height: 100vh;
             width: 100%;
             background-color: rgb(255, 255, 255);
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
             padding-left: 20px;
+            display: flex;
+        }
+        .icon{
+            display: flex;
+            flex-direction: column;
+           
+            margin-top: 200px;
+            margin-left: 0px;
         }
 
-        /* Making icon boxes */
         .icon-box {
-            position: relative;
-            z-index: 2;
             display: flex;
-            flex-direction: column; /* Change to column to make icons vertically aligned */
             align-items: center;
             padding: 10px;
             margin: 10px;
             transition: border 0.3s ease, padding 0.3s ease;
             cursor: pointer;
-            border-radius: 50%;
+            border-radius: 50%; /* Make the box circular initially */
             overflow: hidden;
-            width: 50px;
+            width: 50px; /* Set a fixed width and height for the circular box */
             height: 50px;
             background-color: rgb(206, 205, 204);
             transition: all 0.9s ease;
@@ -52,20 +52,18 @@
 
         .icon-box:hover {
             border: 2px solid black;
-            border-radius: 10px;
+            border-radius: 10px; /* Rectangle with rounded corners on hover */
             padding: 10px;
             width: fit-content;
             background-color: rgb(65, 65, 203);
             display:flex;
         }
 
-        /* Adding stuff to icon */
         .icon-box i {
             font-size: 24px;
-            margin-bottom: 5px; /* Add margin at the bottom for spacing between icon and text */
+            margin-right: 10px;
         }
 
-        /* Hover name */
         .icon-box span {
             display: none;
             font-size: 16px;
@@ -76,88 +74,158 @@
             display: block;
         }
 
-        /* About Page Content */
-        .about-page {
-            position: relative;
-            z-index: 1;
+        .abo {
+            position: fixed;
             display: flex;
-            flex-direction: row; /* Change to row to make content side by side */
-            align-items: center;
-            margin-top: 0px;
+            flex-direction: column;
+            margin-top: 20px;
+            padding: 20px;
+            margin-left: 200px;
         }
-
-        .about-photo {
-           height: 600px;
-           width: 300px;
-            overflow: hidden;
-            margin-left: 100px;
-            margin-right: 60px; /* Add margin for spacing between photo and details */
+        .imag{
+            height: 500px;
+            width:350px;
+           
+        }
+        .image{
+            display: flex;
+            flex-direction: column;
+        }
+        .row{
+            display: flex;
             
         }
-
-        /* Additional Styling for Details */
-        .details {
-            font-size: 18px;
-            margin-bottom: 10px;
+        .listing{
+            padding: 40px;
+        }
+        .rest{
+            margin-left: 50px;
         }
 
+         h2{
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .about .content h3 {
+            font-weight: 700;
+            font-size: 26px;
+            color: #728394;
+        }
+
+        .about .content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about .content ul li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .about .content ul strong {
+            margin-right: 10px;
+        }
+
+        .about .content ul i {
+            font-size: 16px;
+            margin-right: 5px;
+            color: #0563bb;
+            line-height: 0;
+        }
+
+        .about .content p:last-child {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Icon Box Container -->
-    <div class="icon-container">
-        <!-- Home Icon -->
-        <a href="index.html" class="icon-box">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
-        </a>
+   <div class="icon">
+     <!-- Home Icon -->
+     <a href="index.html" class="icon-box">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </a>
 
-        <!-- About Icon -->
-        <a class="icon-box" href="about.html">
-            <i class="fas fa-info-circle"></i>
-            <span>About</span>
-        </a>
+    <!-- About Icon -->
+    <a class="icon-box" href="about.html">
+        <i class="fas fa-info-circle"></i>
+        <span>About</span>
+    </a>
 
-        <!-- Resume Icon -->
-        <a class="icon-box" href="resume.html">
-            <i class="fas fa-file-alt"></i>
-            <span>Resume</span>
-        </a>
+    <!-- Resume Icon -->
+    <a class="icon-box" href="resume.html">
+        <i class="fas fa-file-alt"></i>
+        <span>Resume</span>
+    </a>
 
-        <!-- Portfolio Icon -->
-        <a class="icon-box" href="port.html">
-            <i class="fas fa-briefcase"></i>
-            <span>Portfolio</span>
-        </a>
+    <!-- Portfolio Icon -->
+    <a class="icon-box" href="port.html">
+        <i class="fas fa-briefcase"></i>
+        <span>Portfolio</span>
+    </a>
 
-        <!-- Contact Icon -->
-        <a class="icon-box" href="contact.html">
-            <i class="fas fa-phone"></i>
-            <span>Contact</span>
-        </a>
+    <!-- Contact Icon -->
+    <a class="icon-box" href="contact.html">
+        <i class="fas fa-phone"></i>
+        <span>Contact</span>
+    </a>
 
-        <!-- Services Icon -->
-        <a class="icon-box" href="service.html">
-            <i class="fas fa-concierge-bell"></i>
-            <span>Services</span>
-        </a>
-    </div>
+    <!-- Services Icon -->
+    <a class="icon-box" href="service.html">
+        <i class="fas fa-concierge-bell"></i>
+        <span>Services</span>
+    </a>
+   </div>
 
-    <!-- About Page Content -->
-    <div class="about-page">
-        <div class="about-photo">
-            <img src="back.jpg" alt="Your Photo" >
+   
+    
+   <div class="abo">
+    <h2>About<br><br><br></h2>
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                
+                <p>i my name is aditya singh and i am student at scalewr school of technology.<br><br></p>
+            </div>
+            <div class="row">
+                <div class="image">
+                    <img src="back.jpg" class="imag" alt="">
+                </div>
+                <div class="rest">
+                    <h3>UI/UX Designer &amp; Web Developer.<br><br></h3>
+                    <p class="fst-italic">
+                        Educationally accomplished, Aditya has a background in [mention academic or professional background]. This has not only equipped Aditya with knowledge but also shaped a mindset driven by curiosity and a thirst for continuous learning.
+                    <br><br></p>
+                    <div class="row">
+                        <div class="listing">
+                            <ul>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 May 1995</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.com</span></li>
+                                <!-- Additional list items ... --><br><br>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
+                                <!-- Additional list items ... -->
+                            </ul>
+                        </div>
+                    </div>
+                    <p>
+                        Outside of professional pursuits, Aditya is known for [mention any personal interests, community involvement, or unique talents]. This multifaceted individual is not only focused on personal growth but also on making a positive impact on the community.
+
+
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="details">
-            <p>Name: Your Name</p>
-            <p>Date of Birth: Your DOB</p>
-            <p>Phone: Your Phone Number</p>
-            <!-- Add more details as needed -->
-        </div>
-        <p>About Me: Write a brief description about yourself here.</p>
-    </div>
+    </section>
+   </div>
 
 </body>
 
