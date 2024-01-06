@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+        
     <style>
         /* Whole page */
         * {
@@ -19,9 +19,11 @@
             font-family: "Poppins", sans-serif;
         }
 
+        
+
         /* Only body */
         body {
-            height: 100vh;
+            height:fit-content;
             width: 100%;
             background-color: rgb(255, 255, 255);
             display: flex;
@@ -31,83 +33,43 @@
             padding-left: 20px;
         }
 
-        /* Timeline container */
-        .timeline {
-            position: relative;
-            top:0px;
-            width: 50%;
-           
-            z-index: -1;
+        .icon{
+            display: flex;
+            flex-direction: column;
+           position: fixed;
+           top: 20px;
+            margin-top: 200px;
+            margin-left: 0px;
         }
 
-        /* Timeline line */
-        .timeline:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 2px;
-            background-color: #333;
-            margin-left: -1px;
-        }
 
-        /* Timeline item */
-        .timeline-item {
-            position: relative;
-            margin-bottom: 50px;
-        }
-
-        /* Timeline circle */
-        .timeline-item:before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: #333;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-        }
-
-        /* Content in timeline item */
-        .timeline-content {
-            position: relative;
-            left: 25%;
-            background-color: #f5f5f5;
-            padding: 20px;
-            border-radius: 5px;
-            z-index: 2;
-        }
-
-        /* Icon box style */
+        /* Making icon boxes */
         .icon-box {
+            
             display: flex;
             align-items: center;
             padding: 10px;
             margin: 10px;
             transition: border 0.3s ease, padding 0.3s ease;
             cursor: pointer;
-            border-radius: 50%;
+            border-radius: 50%; /* Make the box circular initially */
             overflow: hidden;
-            width: 50px;
+            width: 50px; /* Set a fixed width and height for the circular box */
             height: 50px;
             background-color: rgb(206, 205, 204);
             transition: all 0.9s ease;
             color: #110808;
             text-decoration: none;
-           position: relative;
-           top:200px
             
         }
 
         .icon-box:hover {
             border: 2px solid black;
-            border-radius: 10px;
+            border-radius: 10px; /* Rectangle with rounded corners on hover */
             padding: 10px;
             width: fit-content;
             background-color: rgb(65, 65, 203);
+            display:flex;
         }
 
         /* Adding stuff to icon */
@@ -126,76 +88,168 @@
         .icon-box:hover span {
             display: block;
         }
+        .resu{
+            
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            padding: 20px;
+            margin-left: 200px;
+        }
+
+        .resume .resume-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #45505b;
+}
+
+.resume .resume-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid #0563bb;
+  position: relative;
+}
+
+.resume .resume-item h4 {
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: #0563bb;
+  margin-bottom: 10px;
+}
+
+.resume .resume-item h5 {
+  font-size: 16px;
+  background: #f7f8f9;
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.resume .resume-item ul {
+  padding-left: 20px;
+}
+
+.resume .resume-item ul li {
+  padding-bottom: 10px;
+}
+
+.resume .resume-item:last-child {
+  padding-bottom: 0;
+}
+
+.resume .resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -9px;
+  top: 0;
+  background: #fff;
+  border: 2px solid #0563bb;
+}
+
+
+        
+
+       
     </style>
 </head>
 
 <body>
 
-    <!-- Home Icon -->
-      <!-- Icon Box Container -->
-      <div class="icon-container">
-        <!-- Home Icon -->
-        <a href="index.html" class="icon-box">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
-        </a>
 
-        <!-- About Icon -->
-        <a class="icon-box" href="about.html">
-            <i class="fas fa-info-circle"></i>
-            <span>About</span>
-        </a>
+  <div class="icon">
+      <!-- Home Icon -->
+      <a href="index.html" class="icon-box">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </a>
 
-        <!-- Resume Icon -->
-        <a class="icon-box" href="resume.html">
-            <i class="fas fa-file-alt"></i>
-            <span>Resume</span>
-        </a>
+    <!-- About Icon -->
+    <a class="icon-box" href="about.html">
+        <i class="fas fa-info-circle"></i>
+        <span>About</span>
+    </a>
 
-        <!-- Portfolio Icon -->
-        <a class="icon-box" href="port.html">
-            <i class="fas fa-briefcase"></i>
-            <span>Portfolio</span>
-        </a>
+    <!-- Resume Icon -->
+    <a class="icon-box" href="resume.html">
+        <i class="fas fa-file-alt"></i>
+        <span>Resume</span>
+    </a>
 
-        <!-- Contact Icon -->
-        <a class="icon-box" href="contact.html">
-            <i class="fas fa-phone"></i>
-            <span>Contact</span>
-        </a>
+    <!-- Portfolio Icon -->
+    <a class="icon-box" href="port.html">
+        <i class="fas fa-briefcase"></i>
+        <span>Portfolio</span>
+    </a>
 
-        <!-- Services Icon -->
-        <a class="icon-box" href="service.html">
-            <i class="fas fa-concierge-bell"></i>
-            <span>Services</span>
-        </a>
-    </div>
+    <!-- Contact Icon -->
+    <a class="icon-box" href="contact.html">
+        <i class="fas fa-phone"></i>
+        <span>Contact</span>
+    </a>
 
-    <!-- Timeline Container -->
-    <div class="timeline">
-        <!-- Timeline Item 1 -->
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h3>Summary</h3>
-                <p>Your summary goes here.</p>
+    <!-- Services Icon -->
+    <a class="icon-box" href="service.html">
+        <i class="fas fa-concierge-bell"></i>
+        <span>Services</span>
+    </a>
+  </div>
+
+
+    <div class="resu">
+
+    <section id="resume" class="resume">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Resume</h2>
+                <p>"Great sorrows are taken care of. His needs lead to avoiding something indeed. They are real constraints. Anyone, with any desire. And no one who hinders the reception of others. Because he avoids it, indeed, in these duties, he takes care of what is here."</p>
             </div>
-        </div>
 
-        <!-- Timeline Item 2 -->
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h3>Education</h3>
-                <p>Your education details go here.</p>
-            </div>
-        </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="resume-title">Summary</h3>
+                    <div class="resume-item pb-0">
+                        <h4>Aditya Singh</h4>
+                        <p><em>Enthusiastic student at Scaler School, India, pursuing a degree in [insert Aditya's field of study]. Dedicated to academic excellence and passionate about [insert Aditya's interests or major]. Committed to learning and applying innovative solutions to real-world challenges.</em></p>
+                        <!-- Add more details about Aditya's contact information if available -->
+                    </div>
 
-        <!-- Timeline Item 3 -->
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h3>Work Experience</h3>
-                <p>Your work experience details go here.</p>
+                    <h3 class="resume-title">Education</h3>
+                    <div class="resume-item">
+                        <h4>[Aditya's Degree & Field of Study]</h4>
+                        <h5>[Aditya's Expected Graduation Year]</h5>
+                        <p><em>Scaler School, [City], India</em></p>
+                        <p>[Additional information about Aditya's academic achievements or projects]</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Add more sections as needed, such as skills, projects, etc. -->
+
+                    <!-- Example section -->
+                    <h3 class="resume-title">Skills</h3>
+                    <div class="resume-item">
+                        <ul>
+                            <li>Programming Languages: [List of languages]</li>
+                            <li>Design Tools: [List of tools]</li>
+                            <li>[Additional skills]</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+
         </div>
+    </section><!-- End Resume Section -->
+</div>
+
     </div>
 
 </body>
